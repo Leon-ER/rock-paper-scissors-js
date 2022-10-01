@@ -1,0 +1,16 @@
+h1{
+    text-align: center;
+}
+.score{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.playerOptions{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.Winner{
+    text-align: center;
+}
