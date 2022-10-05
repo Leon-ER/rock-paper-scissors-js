@@ -1,16 +1,34 @@
-h1{
-    text-align: center;
+h1 {
+  text-align: center;
 }
-.score{
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.buttonDiv {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
 }
-.playerOptions{
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.out {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-.Winner{
-    text-align: center;
+.win {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.pc {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.won {
+  background-color: green;
+  color: white;
+}
+
+.lost {
+  background-color: red;
+  color: white;
 }

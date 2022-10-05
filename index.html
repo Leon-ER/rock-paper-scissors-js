@@ -1,14 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Rock-paper-scissors</title>
+    <link rel="stylesheet" a href="style.css" />
+  </head>
+  <body>
+    <h1>Rock paper Rock-paper-scissors</h1>
+    <div class="buttonDiv">
+      <button id="rock" onclick="play('rock')">Rock</button>
+      <button id="paper" onclick="play('paper')">Paper</button>
+      <button id="scissors" onclick="play('scissors')">Scissors</button>
+    </div>
+    <div class="out">
+      <p>User Score:</p>
+      <p id="userScore"></p>
+    </div>
+    <div class="pc">
+      <p>PC Score:</p>
+      <p id="pcScore"></p>
+    </div>
+    <div class="win">
+      <p id="winner"></p>
+    </div>
     <script src="javascript.js"></script>
-    <link rel="stylesheet" a href="style.css">
-</head>
-<body>
-    
-</body>
+  </body>
 </html>

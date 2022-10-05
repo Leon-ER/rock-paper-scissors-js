@@ -1,3 +1,3 @@
 # rock-paper-scissors-js
 
-game not completed yet almost done
+Tried my best, took around a day to complete it in total 

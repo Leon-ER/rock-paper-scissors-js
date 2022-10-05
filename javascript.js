@@ -1,40 +1,69 @@
-
-const choices =["rock" , "paper" , "scissors"];
+const choices = ["rock", "paper", "scissors"];
 let score = 0;
-function getComputerChoice(){
-    const choice = choices[Math.floor(Math.random()* choices.length)];
-    return choice;
-}
-function checkWinner(playerSlecetion, computerSelection){
-    if(playerSlecetion == computerSelection){
-        return "tie";
-    }
-    else if(
-        (playerSlecetion == "rock" && computerSelection == "scissors") ||
-        (playerSlecetion == "scissors" && computerSelection == "paper") ||
-        (playerSlecetion == "paper" && computerSelection == "rock") 
-    ){
-        return "player"
-        
-    }
-    else{
-        return "computer"
-    }
+let pcScore = 0;
+let playerSelection = "rock";
+function getComputerChoice() {
+  const choice = choices[Math.floor(Math.random() * choices.length)];
+  return choice;
 }
 
-function playRound(playerSlecetion, computerSelection){
-    const resault = checkWinner(playerSlecetion , computerSelection);
-    if(resault == "tie"){
-        return "Its a tie"
-    }
-    else if(resault == "player"){
-        return `you win ${playerSlecetion} beats ${computerSelection}`
-    }
-    else{
-        return `you lost ${computerSelection} beats ${playerSlecetion}`
-    }
+function checkWinner(playerSlecetion, computerSelection) {
+  if (playerSlecetion == computerSelection) {
+    return "tie";
+  } else if (
+    (playerSlecetion == "rock" && computerSelection == "scissors") ||
+    (playerSlecetion == "scissors" && computerSelection == "paper") ||
+    (playerSlecetion == "paper" && computerSelection == "rock")
+  ) {
+    return "player";
+  } else {
+    return "computer";
+  }
 }
-const playerSelection = prompt("Enter the hand you wish to play (Please use lower case letters ex : rock , paper , scissors) ");
-const computerSelection = getComputerChoice();
-console.log(playRound(playerSelection , computerSelection))
 
+function playRound(_playerSlecetion, computerSelection) {
+  console.log(_playerSlecetion);
+  const resault = checkWinner(_playerSlecetion, computerSelection);
+
+  if (resault == "tie") {
+    return "Its a tie";
+  } else if (resault == "player") {
+    score++;
+    return `you win ${_playerSlecetion} beats ${computerSelection}`;
+  } else {
+    pcScore++;
+    return `you lost ${computerSelection} beats ${_playerSlecetion}`;
+  }
+}
+
+function answer() {
+  const computerSelection = getComputerChoice();
+  let result = playRound(playerSelection, computerSelection);
+  console.log(result);
+  document.getElementById("winner").innerHTML = result;
+}
+
+function play(_playerSlecetion) {
+  playerSelection = _playerSlecetion;
+  answer();
+
+  document.getElementById("userScore").innerHTML = score;
+  document.getElementById("pcScore").innerHTML = pcScore;
+
+  if (score >= 5) {
+    document.getElementById("winner").innerHTML = "You won the game";
+    document.getElementById(playerSelection).classList.add("won");
+    disableGame()
+  }
+  if (pcScore >= 5) {
+    document.getElementById("winner").innerHTML = "You lost the game";
+    document.getElementById(playerSelection).classList.add("lost");
+    disableGame()
+  }
+}
+
+function disableGame() {
+  document.getElementById("rock").disabled = true;
+  document.getElementById("paper").disabled = true;
+  document.getElementById("scissors").disabled = true;
+}
