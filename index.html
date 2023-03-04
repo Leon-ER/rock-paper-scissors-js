@@ -8,23 +8,28 @@
     <link rel="stylesheet" a href="style.css" />
   </head>
   <body>
-    <h1>Rock paper Rock-paper-scissors</h1>
-    <div class="buttonDiv">
-      <button id="rock" onclick="play('rock')">Rock</button>
-      <button id="paper" onclick="play('paper')">Paper</button>
-      <button id="scissors" onclick="play('scissors')">Scissors</button>
-    </div>
-    <div class="out">
-      <p>User Score:</p>
-      <p id="userScore"></p>
-    </div>
-    <div class="pc">
-      <p>PC Score:</p>
-      <p id="pcScore"></p>
+    <h1>Rock paper Scissors</h1>
+    <div class="scores">
+      <div class="out">
+        <p>User Score:</p>
+        <p id="userScore"></p>
+      </div>
+      <div class="pc">
+        <p>PC Score:</p>
+        <p id="pcScore"></p>
+      </div>
     </div>
     <div class="win">
       <p id="winner"></p>
     </div>
-    <script src="javascript.js"></script>
+    <div class="buttonDiv">
+      <button id="rock" onclick="play('rock')" class="btn">Rock</button>
+      <button id="paper" onclick="play('paper')"class="btn">Paper</button>
+      <button id="scissors" onclick="play('scissors')"class="btn">Scissors</button>
+    </div>
+    <div class="resetBtn">
+      <button class="btn" onclick="reset()">Reset Game</button>
+    </div>
   </body>
+  <script src="javascript.js"></script>
 </html>

@@ -22,7 +22,6 @@ function checkWinner(playerSlecetion, computerSelection) {
 }
 
 function playRound(_playerSlecetion, computerSelection) {
-  console.log(_playerSlecetion);
   const resault = checkWinner(_playerSlecetion, computerSelection);
 
   if (resault == "tie") {
@@ -39,7 +38,6 @@ function playRound(_playerSlecetion, computerSelection) {
 function answer() {
   const computerSelection = getComputerChoice();
   let result = playRound(playerSelection, computerSelection);
-  console.log(result);
   document.getElementById("winner").innerHTML = result;
 }
 
@@ -66,4 +64,16 @@ function disableGame() {
   document.getElementById("rock").disabled = true;
   document.getElementById("paper").disabled = true;
   document.getElementById("scissors").disabled = true;
+}
+function reset(){
+  pcScore = 0;
+  score = 0;
+  document.getElementById("userScore").innerHTML = score;
+  document.getElementById("pcScore").innerHTML = pcScore;
+  document.getElementById("rock").disabled = false;
+  document.getElementById("paper").disabled = false;
+  document.getElementById("scissors").disabled = false;
+  console.log('test')
+  console.log(pcScore)
+  console.log(score)
 }
